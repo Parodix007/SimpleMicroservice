@@ -1,6 +1,6 @@
 services:
   db:
-    container_name: microservice_db
+    container_name: microservice_db_credit
     image: mysql
     ports:
       - 8000:80
@@ -8,13 +8,13 @@ services:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: users
     volumes:
-      - simplemicrosevice:/var/libs/mysql
+      - simplemicroservice:/var/libs/mysql
   app:
-    container_name: simplemicrosevice
+    container_name: simplemicroservice_customer
     image: openjdk:11
-    working_dir: /spring/simplemicrosevice
+    working_dir: /spring/simplemicroservice
     volumes:
-      - ./:/spring/simplemicrosevice
+      - ./:/spring/simplemicroservice
     command: sh -c "./gradlew bootRun"
     ports:
       - 4000:8080
@@ -24,4 +24,4 @@ services:
       MYSQL_PASSWORD: secret
       MYSQL_DB: users
 volumes:
-  simplemicrosevice:
+  simplemicroservice:
