@@ -9,7 +9,7 @@ services:
     volumes:
       - credit-app:/var/libs/mysql
   users:
-    container_name: auth-service
+    container_name: credit_users
     image: openjdk:17-alpine
     working_dir: /spring/credit_users
     volumes:
