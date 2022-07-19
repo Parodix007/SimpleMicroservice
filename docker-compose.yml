@@ -8,6 +8,13 @@ services:
       MYSQL_DATABASE: credits
     volumes:
       - credit-app:/var/libs/mysql
+
+  rabbit-server:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
   users:
     container_name: credit_users
     image: openjdk:17-alpine
