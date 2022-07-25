@@ -16,6 +16,7 @@ public final class CustomerService {
   }
 
   public List<CustomerDTO> getCustomers() {
+    System.out.println("invocation");
     return customerRepo.findAll().stream().map(customer -> new CustomerDTO(customer.getCreditId(),
             customer.getFirstName(), customer.getPESEL(), customer.getLastName()))
         .collect(Collectors.toList());

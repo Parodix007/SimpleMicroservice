@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RabbitConfig {
+
   private static final String EXCHANGE_TOPIC = "credit-product-topic";
   private static final String QUEUE_NAME = "credit-product-queue";
   private static final String PATH_KEY = "credit-product-path-key";
