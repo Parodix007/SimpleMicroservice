@@ -1,10 +1,9 @@
-package com.parodix.SimpleMicroservice.rabbitreceiver;
+package com.parodix.SimpleMicroservice.rabitreceiver;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public final class RabbitReceiver {
-
+public class RabbitReceiver {
   public void receiveMessage(final String message) {
     System.out.printf("MESSAGE: %s", message);
   }
