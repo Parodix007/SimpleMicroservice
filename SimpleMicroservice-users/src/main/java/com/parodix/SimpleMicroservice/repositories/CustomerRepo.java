@@ -1,0 +1,10 @@
+package com.parodix.SimpleMicroservice.repositories;
+
+import com.parodix.SimpleMicroservice.entities.CustomerEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CustomerRepo extends JpaRepository<CustomerEntity, Long> {
+
+}

@@ -9,27 +9,21 @@ import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Getter
-@AllArgsConstructor
 @NoArgsConstructor
-public final class CustomerEntity {
+@AllArgsConstructor
+@Getter
+public final class Product {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private int creditId;
 
   @NotNull
-  @Column(length = 64)
-  private String firstName;
+  @Column(unique = true, length = 64)
+  private String productName;
 
   @NotNull
-  @Column(unique = true, length = 12)
-  private long PESEL;
-
-  @NotNull
-  @Column(length = 64)
-  private String lastName;
+  private long value;
 }
